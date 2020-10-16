@@ -1,25 +1,34 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {BrowserRouter, Route} from "react-router-dom";
+import {MDBContainer} from "mdbreact";
+import About from "./components/About";
+import Landing from "./components/Landing";
+import Contact from "./components/Contact";
+import Cart from "./components/Cart";
+import Portfolio from "./components/Portfolio";
+import Navbar from "./components/NavBar";
+import Store from "./components/Store";
+import Search from "./components/Search";
+
+import "mdbreact/dist/css/mdb.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const ArtsOfSteen = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <MDBContainer>
+        <Route path="/" exact component={Landing} />
+        <Route path="/about" component={About} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/store" component={Store} />
+        <Route path="/search" component={Search} />
+      </MDBContainer>
+    </BrowserRouter>
   );
 };
 
