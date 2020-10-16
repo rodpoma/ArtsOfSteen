@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-function ArtsOfSteen() {
+const ArtsOfSteen = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +21,6 @@ function ArtsOfSteen() {
       </header>
     </div>
   );
-}
+};
 
 export default ArtsOfSteen;
