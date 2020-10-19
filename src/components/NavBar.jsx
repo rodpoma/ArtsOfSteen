@@ -9,6 +9,8 @@ import {
 } from "mdbreact";
 import Logo1 from "../Assets/Artboard 3.png";
 
+//1012px max width for this component
+
 const Navbar = () => {
   return (
     <MDBNavbar color="#1c2a48 mdb-color darken-3" dark expand="md" fixed="top">
