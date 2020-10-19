@@ -1,7 +1,60 @@
 import React from "react";
+import {Form, Col, Container} from "react-bootstrap";
+import emailjs from "emailjs-com";
+import swal from "sweetalert";
 
 const Contact = () => {
-  return <div></div>;
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        `${process.env.REACT_APP_EMAILJS_SERVICE}`,
+        `${process.env.REACT_APP_EMAILJS_TEMPLATE}`,
+        e.target,
+        `${process.env.REACT_APP_EMAILJS_USER}`
+      )
+      .then(
+        result => {
+          console.log(result.text);
+          swal("email sent!");
+        },
+        error => {
+          console.log(error.text);
+          swal("something went wrong!");
+        }
+      );
+  }
+  return (
+    <Container className="contactForm">
+      <Form onSubmit={sendEmail}>
+        <Form.Row>
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Name</Form.Label>
+            <Form.Control name="user_email" />
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Label>Email</Form.Label>
+            <Form.Control name="user_email" />
+          </Form.Group>
+        </Form.Row>
+
+        <Form.Group controlId="formGridAddress1">
+          <Form.Label>Subject</Form.Label>
+          <Form.Control name="subject" />
+        </Form.Group>
+
+        <Form.Group controlId="formGridAddress2">
+          <Form.Label>Message</Form.Label>
+          <Form.Control as="textarea" name="message" />
+        </Form.Group>
+        <button type="submit" className="button">
+          Submit
+        </button>
+      </Form>
+    </Container>
+  );
 };
 
 export default Contact;
