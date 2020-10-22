@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import {BrowserRouter, Route} from "react-router-dom";
-import {MDBContainer} from "mdbreact";
+
 import About from "./components/About";
 import Landing from "./components/Landing";
 import Contact from "./components/Contact";
@@ -19,7 +19,7 @@ const ArtsOfSteen = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <MDBContainer>
+      <div className="containerUltimate">
         <Route path="/" exact component={Landing} />
         <Route path="/about" component={About} />
         <Route path="/portfolio" component={Portfolio} />
@@ -27,7 +27,7 @@ const ArtsOfSteen = () => {
         <Route path="/cart" component={Cart} />
         <Route path="/store" component={Store} />
         <Route path="/search" component={Search} />
-      </MDBContainer>
+      </div>
     </BrowserRouter>
   );
 };
