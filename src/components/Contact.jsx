@@ -26,33 +26,57 @@ const Contact = () => {
       );
   }
   return (
-    <Container className="contactForm">
-      <Form onSubmit={sendEmail}>
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Name</Form.Label>
-            <Form.Control name="user_email" />
-          </Form.Group>
+    <Container className="page">
+      <Container>
+        <h1
+          style={{
+            fontSize: "3vw",
+            color: "#1c2a48",
+            marginBottom: "5vh",
+          }}
+        >
+          Contact Me!
+        </h1>
+        <Container
+          style={{
+            height: "50vh",
+            width: "70vw",
+          }}
+        >
+          <Form onSubmit={sendEmail}>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Name</Form.Label>
+                <Form.Control name="user_email" />
+              </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Email</Form.Label>
-            <Form.Control name="user_email" />
-          </Form.Group>
-        </Form.Row>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Email</Form.Label>
+                <Form.Control name="user_email" />
+              </Form.Group>
+            </Form.Row>
 
-        <Form.Group controlId="formGridAddress1">
-          <Form.Label>Subject</Form.Label>
-          <Form.Control name="subject" />
-        </Form.Group>
+            <Form.Group controlId="formGridAddress1">
+              <Form.Label>Subject</Form.Label>
+              <Form.Control name="subject" />
+            </Form.Group>
 
-        <Form.Group controlId="formGridAddress2">
-          <Form.Label>Message</Form.Label>
-          <Form.Control as="textarea" name="message" />
-        </Form.Group>
-        <button type="submit" className="button">
-          Submit
-        </button>
-      </Form>
+            <Form.Group controlId="formGridAddress2">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
+                name="message"
+                style={{
+                  height: "20vh",
+                }}
+              />
+            </Form.Group>
+            <button type="submit" className="button">
+              Submit
+            </button>
+          </Form>
+        </Container>
+      </Container>
     </Container>
   );
 };

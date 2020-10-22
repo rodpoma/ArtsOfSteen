@@ -50,11 +50,28 @@
   margin-top: 12.5px;
 }
 
-.contactForm {
+.page {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 4vw;
+  color: #1c2a48;
+}
+
+.paragraph {
+  font-size: 1vw;
+  color: #1c2a48;
 }
 
 .button {
